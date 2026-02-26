@@ -1,29 +1,26 @@
-#ifndef BANKACCOUNT_H
-#define BANKACCOUNT_H
+#ifndef BANK_H
+#define BANK_H
 
+#include "BankAccount.h"
+#include <vector>
 #include <string>
-#include <iostream>
 
-class BankAccount {
+class Bank {
 private:
-    // Поля класса (инкапсуляция)
-    std::string accountNumber;
-    std::string ownerName;
-    double balance;
+    std::vector<BankAccount> accounts; // Хранилище счетов
+    int nextAccountNumber; // Простой способ генерации номеров
+
+    // Вспомогательный метод для генерации уникального номера счета
+    std::string generateAccountNumber();
 
 public:
-    // Конструктор (может быть с параметрами по умолчанию)
-    BankAccount(const std::string& owner = "Unknown", const std::string& accNum = "0000", double initialBalance = 0.0);
+    Bank(); // Сам конструктор
 
-    // Методы для работы со счетом
-    void deposit(double amount);
-    bool withdraw(double amount); // Возвращает true, если снятие прошло успешно
-    double getBalance() const; // const означает, что метод не меняет объект
-    void printStatement() const;
-
-    // Геттер для номера счета, чтобы можно было искать счета в банке
-    std::string getAccountNumber() const;
-    std::string getOwnerName() const;
+    // Основные методы банка
+    void createAccount(const std::string& owner, double initialDeposit = 0.0);
+    BankAccount* getAccount(const std::string& accNum); // Возвращает указатель на счет или nullptr
+    double totalBankBalance() const;
+    void listAllAccounts() const; // Для наглядности
 };
 
-#endif // BANKACCOUNT_H
+#endif // BANK_H
