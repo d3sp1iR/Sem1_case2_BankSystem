@@ -57,8 +57,8 @@ void Bank::listAllAccounts() const {
     for (const auto& account : accounts) {
         // Просто печатаем номер и владельца, чтобы не загромождать вывод
         std::cout << "    - " << account.getAccountNumber() << " | "
-          << "Владелец: " 
-          << account.getOwnerName() 
+          << "Владелец: "
+          << account.getOwnerName()
           << " | Баланс: ";
         std::cout << std::fixed << std::setprecision(2) << account.getBalance() << std::endl;
         // На самом деле, правильнее было бы вынести печать баланса в отдельный геттер,
