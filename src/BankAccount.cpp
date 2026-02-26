@@ -53,3 +53,7 @@ void BankAccount::printStatement() const {
 std::string BankAccount::getAccountNumber() const {
     return accountNumber;
 }
+
+std::string BankAccount::getOwnerName() const {
+    return ownerName;
+}

@@ -23,6 +23,7 @@ public:
 
     // Геттер для номера счета, чтобы можно было искать счета в банке
     std::string getAccountNumber() const;
+    std::string getOwnerName() const;
 };
 
 #endif // BANKACCOUNT_H
