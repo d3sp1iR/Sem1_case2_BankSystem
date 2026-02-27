@@ -1,3 +1,10 @@
+//
+//  Bank.h
+//  
+//
+//  Created by Сергей Левченков on 26.02.2026.
+//
+
 #ifndef BANK_H
 #define BANK_H
 
@@ -14,7 +21,7 @@ private:
     std::string generateAccountNumber();
 
 public:
-    Bank(); // Сам конструктор
+    Bank(); // Конструктор
 
     // Основные методы банка
     void createAccount(const std::string& owner, double initialDeposit = 0.0);
@@ -23,10 +30,4 @@ public:
     void listAllAccounts() const; // Для наглядности
 };
 
-<<<<<<< HEAD
-#endif // BANKACCOUNT_H
-
-//усё
-=======
 #endif // BANK_H
->>>>>>> da2280b9cf1958082b65cc945befeb51ed8ad1f7
